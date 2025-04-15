@@ -3,37 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Website Pop-up</title>
+  <title>Selamat Ulang Tahun Ara</title>
   <style>
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
-    body {
+    html, body {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
       font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+    }
+    body {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      margin: 0;
-      background-color: #f7f7f7;
       text-align: center;
-      overflow: hidden;
     }
     .Box {
-      font-size: 5vw;
+      font-size: 6vw;
       animation: pulse 2.5s infinite;
-      margin-bottom: 20px;
+      padding: 2vh 5vw;
     }
     #startBtn {
-      padding: 15px 30px;
+      padding: 2vh 4vw;
       font-size: 5vw;
       cursor: pointer;
       background-color: blue;
       color: white;
       border: none;
-      border-radius: 5px;
-      margin-top: 20px;
+      border-radius: 10px;
     }
     .popup {
       display: none;
@@ -42,15 +45,14 @@
       background-color: rgba(0, 0, 0, 0.5);
       justify-content: center;
       align-items: center;
-      z-index: 999;
+      z-index: 10;
     }
     .popup-content {
-      background-color: white;
-      padding: 20px;
-      text-align: center;
-      border-radius: 10px;
-      width: 80%;
-      max-width: 90%;
+      background: white;
+      border-radius: 12px;
+      width: 90vw;
+      max-width: 90vw;
+      padding: 3vh 4vw;
       box-sizing: border-box;
     }
     .popup-image {
@@ -59,38 +61,24 @@
       border-radius: 10px;
     }
     .popup-text {
-      margin: 20px 0;
-      font-size: 16px;
+      margin: 2vh 0;
+      font-size: 4vw;
     }
     button {
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
+      padding: 1.5vh 4vw;
+      font-size: 4vw;
       background-color: lightslategrey;
       color: white;
       border: none;
-      border-radius: 5px;
-      margin-top: 10px;
+      border-radius: 8px;
     }
     button:hover {
       background-color: lightblue;
     }
     @keyframes pulse {
-      0% { transform: scale(1); }
+      0% { transform: scale(1); opacity: 1; }
       50% { opacity: 0.5; }
       100% { transform: scale(1.5); opacity: 0; }
-    }
-    @media (max-width: 600px) {
-      .Box {
-        font-size: 8vw;
-      }
-      #startBtn {
-        font-size: 6vw;
-        padding: 10px 20px;
-      }
-      .popup-content {
-        width: 90%;
-      }
     }
   </style>
 </head>
@@ -117,7 +105,7 @@
   <div id="popup3" class="popup">
     <div class="popup-content">
       <img src="4.gif" alt="Foto" class="popup-image">
-      <h3>Pesan Acel😘</h3>
+      <h3 style="margin: 2vh 0; font-size: 5vw;">Pesan Acel😘</h3>
       <p class="popup-text">Selamat Ulang tahun arakuuuu Mwehehehehe Semoga Sehat selalu, Panjang umur, dan semua keinginan ara dikabulkan satu-satu‼ Sekaligus Juga gapapa siehhh🤪</p>
       <button id="nextBtn3">Lanjut</button>
     </div>
@@ -126,7 +114,7 @@
   <div id="popup4" class="popup">
     <div class="popup-content">
       <img src="3.gif" alt="Foto" class="popup-image">
-      <h3>Terakhir nich!</h3>
+      <h3 style="margin: 2vh 0; font-size: 5vw;">Terakhir nich!</h3>
       <p class="popup-text">Sayangin Acel terus yakk!! Acell sayang ara😡</p>
       <button id="nextBtn4">Lanjut</button>
     </div>
@@ -143,9 +131,7 @@
     const popup4 = document.getElementById('popup4');
     const nextBtn4 = document.getElementById('nextBtn4');
 
-    startBtn.addEventListener('click', () => {
-      popup1.style.display = 'flex';
-    });
+    startBtn.addEventListener('click', () => popup1.style.display = 'flex');
     nextBtn1.addEventListener('click', () => {
       popup1.style.display = 'none';
       popup2.style.display = 'flex';
