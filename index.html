@@ -2,12 +2,12 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Website Pop-up</title>
     <style>
-        /* Style umum */
+/* Style umum */
 * {
-    box-sizing: border-box; /* Menjamin ukuran elemen lebih konsisten */
+    box-sizing: border-box; /* Agar padding dan border tidak merusak tata letak */
 }
 
 body {
@@ -18,13 +18,14 @@ body {
     height: 100vh;
     margin: 0;
     background-color: #f7f7f7;
-    flex-direction: column; /* Menyusun elemen secara vertikal */
+    flex-direction: column;
     text-align: center;
+    overflow: hidden; /* Menghindari scroll yang tidak perlu */
 }
 
 /* Box Animasi */
 .Box {
-    font-size: 50px;
+    font-size: 5vw; /* Menggunakan viewport width agar font menyesuaikan dengan ukuran layar */
     animation: pulse 2.5s infinite;
     margin-bottom: 20px;
 }
@@ -32,7 +33,7 @@ body {
 /* Tombol Mulai */
 #startBtn {
     padding: 15px 30px;
-    font-size: 18px;
+    font-size: 5vw; /* Menggunakan vw untuk ukuran tombol lebih responsif */
     cursor: pointer;
     background-color: blue;
     color: white;
@@ -60,8 +61,8 @@ body {
     padding: 20px;
     text-align: center;
     border-radius: 10px;
-    width: 80%; /* Lebar konten popup menyesuaikan */
-    max-width: 400px; /* Menetapkan maksimal lebar */
+    width: 80%; /* Lebar responsif */
+    max-width: 90%; /* Mengatur lebar maksimal */
     box-sizing: border-box;
 }
 
@@ -109,16 +110,16 @@ button:hover {
 /* Media Queries untuk responsif di layar kecil */
 @media (max-width: 600px) {
     .Box {
-        font-size: 30px; /* Mengurangi ukuran font pada layar kecil */
+        font-size: 8vw; /* Ukuran font Box diatur agar lebih kecil di layar kecil */
     }
 
     #startBtn {
-        font-size: 16px;
+        font-size: 6vw;
         padding: 10px 20px;
     }
 
     .popup-content {
-        width: 90%; /* Menggunakan 90% dari lebar layar pada perangkat kecil */
+        width: 90%; /* Lebar konten popup 90% dari lebar layar */
     }
 }
 
